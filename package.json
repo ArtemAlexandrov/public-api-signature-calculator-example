@@ -1,5 +1,6 @@
 {
-  "name": "testapp",
+  "homepage": "https://3commas-io.github.io/public-api-signature-calculator-example",
+  "name": "public-api-signature-calculator-example",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,6 +21,8 @@
     "web-vitals": "^2.1.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -44,6 +47,7 @@
     ]
   },
   "devDependencies": {
-    "@types/crypto-js": "^4.1.0"
+    "@types/crypto-js": "^4.1.0",
+    "gh-pages": "^3.2.3"
   }
 }
