@@ -1,0 +1,122 @@
+.App {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding: 30px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.method {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select {
+  margin-left: 10px;
+  width: 100px;
+  height: 36px;
+  font-size: 20px;
+}
+
+input {
+  margin-left: 20px;
+  width: 160px;
+  padding: 10px;
+  height: 36px;
+  font-size: 20px;
+}
+
+.fieldsWrapper {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  /*justify-content: center;*/
+  word-break: break-all;
+  width: 90%;
+}
+
+.label {
+  width: 140px;
+  font-weight: bold;
+  margin-right: 10px;
+  text-align: initial;
+}
+
+.testButton {
+  width: 100px;
+  height: 36px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.key_input {
+  width: 90%;
+}
+
+.requestBlock {
+  width: 50%;
+}
+
+textarea {
+  width: 100%;
+  height: 140px;
+  margin-left: 20px;
+}
+
+.value {
+  width: 100%;
+}
+
+code {
+  background: #8d8d8d;
+  color: white;
+  padding: 5px;
+}
