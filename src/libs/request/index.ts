@@ -27,7 +27,7 @@ export const request = async <U extends keyof paths, M extends keyof paths[U]>(
     const params = route.match(/{[A-z]+}/g)?.map((value) => value.replace(/{([A-z]+)}/g, "$1")).join(", ")
     throw new Error(`You didn't pass parameters ${params} `);
   }
-  const raw = { ...(data || {}), api_key: headers?.apikey, secret };
+  const raw = { ...(data || {})};
   const body = isGET
     ? qs.stringify(raw, {arrayFormat: "brackets"})
     : JSON.stringify(raw);
