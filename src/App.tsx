@@ -34,7 +34,7 @@ function App() {
              <code>import HmacSHA256 from "crypto-js/hmac-sha256";</code>
              <code>import Hex from "crypto-js/enc-hex";</code>
              <code>{`const signature = (secret: string, url: string, params?: string) =>`}</code>
-             <code style={{paddingLeft: '15px'}}>{'HmacSHA256(`${url}?${params}`, secret).toString(Hex)'}</code>
+             <code style={{paddingLeft: '15px'}}>{'HmacSHA256(`params ? `${url}?${params}` : url`, secret).toString(Hex)'}</code>
              <div style={{margin: 20}}>* <strong>params</strong> is body in stringified JSON format for POST and query string for GET</div>
              <h3 style={{color: 'red',margin: 20}}>* You must add the signature and apiKey to the headers of the request.</h3>
            </div>
