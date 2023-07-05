@@ -1,12 +1,9 @@
 import qs from "qs";
-import "isomorphic-fetch";
-import { handler } from "./handler";
 import { paths } from "../../api-schema";
-import { routeFor } from "./routeFor";
 import { signature } from "../signature";
 
 export const request = async <U extends keyof paths, M extends keyof paths[U]>(
-  url: U,
+  route: string,
   method: M,
   // @ts-ignore
   params: paths[U][M]["parameters"]["path"],
@@ -17,43 +14,21 @@ export const request = async <U extends keyof paths, M extends keyof paths[U]>(
     secret?: string;
   },
 ) => {
-  const {headers, secret} = req || {};
-    const isGET = method === "get";
-  const isServer = typeof window === "undefined";
+  const {secret} = req || {};
 
-  const route = routeFor(url, params || {});
+  const isGET = method === "get";
 
-  if(/\/{.+}/.test(route)) {
-    const params = route.match(/{[A-z]+}/g)?.map((value) => value.replace(/{([A-z]+)}/g, "$1")).join(", ")
-    throw new Error(`You didn't pass parameters ${params} `);
-  }
   const raw = { ...(data || {})};
   const body = isGET
     ? qs.stringify(raw, {arrayFormat: "brackets"})
     : JSON.stringify(raw);
+
   const {
-    href,
     pathname
   } = new URL("/public/api" + route + (isGET && body ? `?${body}` : ""), "https://api.3commas.io");
     const signatureValue = secret ? signature(secret, pathname, body): '';
 
-  //   const response = await fetch(
-  //   href,
-  //   {
-  //     method: method as string,
-  //     headers: {
-  //       "content-type": "application/json",
-  //       ...(!isServer ? {"x-requested-with": "XMLHttpRequest"} : {}),
-  //       ...(secret
-  //         ? {"signature": signatureValue}
-  //         : {}),
-  //       ...(headers || {}),
-  //     },
-  //     ...(!isGET && body ? {body} : {}),
-  //   }
-  // );
   return {// @ts-ignore
-      // response: await handler(response, {method, body: !isGET && body}),
       valuesForSignature: {
           signatureValue,
           secret,
