@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/public-api-signature-calculator-example/static/css/main.a5c08528.css",
+    "main.js": "/public-api-signature-calculator-example/static/js/main.35421fac.js",
+    "static/js/787.eacf32bb.chunk.js": "/public-api-signature-calculator-example/static/js/787.eacf32bb.chunk.js",
+    "index.html": "/public-api-signature-calculator-example/index.html",
+    "main.a5c08528.css.map": "/public-api-signature-calculator-example/static/css/main.a5c08528.css.map",
+    "main.35421fac.js.map": "/public-api-signature-calculator-example/static/js/main.35421fac.js.map",
+    "787.eacf32bb.chunk.js.map": "/public-api-signature-calculator-example/static/js/787.eacf32bb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a5c08528.css",
+    "static/js/main.35421fac.js"
+  ]
+}
